@@ -1,0 +1,46 @@
+/* External theme overrides for the CREC app */
+:root {
+  --app-font: 'Inter', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  --heading-font: 'Inter', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  --app-body-width: 1180px;
+}
+.stApp {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+.block-container {
+  max-width: var(--app-body-width) !important;
+}
+.plotly-chart {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.stButton {
+  background: linear-gradient(45deg, #035f5f, #069494);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(6, 148, 148, 0.35);
+}
+
+/* Tealify positive metric deltas (keep red for negatives) */
+[data-testid="stMetricDelta"]:has(svg[data-testid="stMetricDeltaIcon-Up"]) {
+  background: linear-gradient(90deg, rgba(6,148,148,0.32), rgba(6,148,148,0.22)) !important;
+  color: #5dd1c1 !important; /* brighter teal for readability */
+  border-radius: 999px !important;
+  padding: 5px 12px !important;
+  border: 1px solid rgba(6,148,148,0.65) !important;
+  box-shadow: 0 0 12px rgba(6,148,148,0.35) inset, 0 0 10px rgba(6,148,148,0.25) !important;
+  font-weight: 600 !important;
+}
+[data-testid="stMetricDelta"] svg[data-testid="stMetricDeltaIcon-Up"] {
+  color: #5dd1c1 !important;
+  fill: #5dd1c1 !important;
+}
+
+/* Optional: subtle hover for interactive feel (no behavioral change) */
+[data-testid="stMetricDelta"]:has(svg[data-testid=\"stMetricDeltaIcon-Up\"]):hover {
+  filter: brightness(1.06);
+}
+
+
